@@ -10,7 +10,7 @@ Simple toDo list app, using Express, MongoDB and basic css.
 ```shell
 npm install
 npm start
-
+```
 
 # Note
 Please create a .env file in the root directory and connect to your mongoDB in that.
