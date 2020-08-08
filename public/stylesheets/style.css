@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #2d3436;
+}
+
+.todo-container {
+    color: #e11c32;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    width: 600px;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-top: 1em solid #e11c3e;
+    border-bottom: 1px solid #eee;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo {
+    width: 400px;
+}
+
+.todo-container h2 {
+    padding: 10px;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-size: 2em;
+}
+
+.todo-header input {
+    width: 92%;
+    border: 1px solid #e11c3e;
+    border-radius: 5px;
+    height: 20px;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+
+.todo-header button {
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.todo-container ul {
+    list-style: none;
+}
+
+.todo-list-item {
+    padding: 0.75em 1em;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Baloo Tamma 2', cursive;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    transition: 0.3s ease-in-out;
+}
+
+.todo-list-item:hover {
+    transform: translateX(-1em);
+}
+
+.todo-list-item::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #cccccc;
+    border-radius: 30%;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+
+.todo-list-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    bottom: 0;
+    background-color: #e11c3e;
+    transition: 0.3s ease-in-out;
+}
+
+.todo-list-item:hover::after {
+    width: 5px;
+}
+.todo-list-item form {
+    width: 100%;
+    display: flex;
+}
+.todo-list-item input {
+    flex-grow: 2;
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.todo-list-item button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    padding: 5px;
+    font-family: 'Baloo Tamma 2', cursive;
+    background-color: rgb(51, 212, 100);
+}
+
+.todo-list-item .cancel {
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    font-family: 'Baloo Tamma 2', cursive;
+    background-color: rgb(223, 43, 43);
+    margin-left: 5px;
+}
+
+.todo-list-item div {
+    flex-grow: 2;
+}
+
+.todo-list-item .edit {
+    /* color: rgb(143, 233, 58); */
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.todo-list-item .remove {
+    color: rgb(243, 96, 96);
+    margin-right: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
