@@ -10,6 +10,7 @@ const todoTaskSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    id: String
 });
 
 module.exports = mongoose.model('TodoTask', todoTaskSchema);
