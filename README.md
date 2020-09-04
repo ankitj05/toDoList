@@ -11,6 +11,10 @@ Simple toDo list app, using Express, MongoDB and basic css.
 -   dotenv (to use the .env files)
 -   express
 -   ejs
+-   passport
+-   passport-local
+-   express-flash
+-   express-session
 
 ### Setup:
 
