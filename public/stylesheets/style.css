@@ -13,7 +13,7 @@ body {
     top: 50%;
     left: 50%;
     padding: 20px;
-    width: 600px;
+    width: 500px;
     transform: translate(-50%, -50%);
     background: #ffffff;
     border-top: 1em solid #e11c3e;
@@ -29,7 +29,7 @@ body {
 }
 
 .todo-container h2 {
-    padding: 10px;
+    padding: 5px;
     font-family: 'Baloo Tamma 2', cursive;
     font-size: 2em;
 }
@@ -38,7 +38,7 @@ body {
     width: 92%;
     border: 1px solid #e11c3e;
     border-radius: 5px;
-    height: 20px;
+    height: 30px;
     font-family: 'Baloo Tamma 2', cursive;
 }
 
@@ -64,11 +64,16 @@ body {
     transition: 0.3s ease-in-out;
 }
 
-.todo-list-item:hover {
-    transform: translateX(-1em);
+.todo-list-item:hover{
+    cursor: pointer;
+    color: #adadad;
 }
 
-.todo-list-item::before {
+.todo-list-item input{
+    visibility: hidden;
+}
+
+/* .todo-list-item::before {
     content: '';
     display: inline-block;
     width: 24px;
@@ -88,22 +93,13 @@ body {
     bottom: 0;
     background-color: #e11c3e;
     transition: 0.3s ease-in-out;
-}
+} */
 
-.todo-list-item:hover::after {
-    width: 5px;
-}
 .todo-list-item form {
     width: 100%;
     display: flex;
 }
-.todo-list-item input {
-    flex-grow: 2;
-    margin-right: 20px;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Baloo Tamma 2', cursive;
-}
+
 .todo-list-item button {
     border: none;
     border-radius: 5px;
@@ -131,7 +127,6 @@ body {
 }
 
 .todo-list-item .edit {
-    /* color: rgb(143, 233, 58); */
     margin-right: 10px;
     cursor: pointer;
     text-decoration: none;
@@ -142,4 +137,117 @@ body {
     margin-right: 5px;
     cursor: pointer;
     text-decoration: none;
+}
+
+.login,
+.register {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+}
+
+.login h1,
+.register h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.login form,
+.register form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+.txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad ;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: .5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+    top: -5px;
+    color: #2691d9;
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+    width: 100%;
+}
+
+.login button[type="submit"],
+.register button[type="submit"],
+.todo_button button[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+.login button[type="submit"]:hover,
+.register button[type="submit"]:hover,
+.todo_button button[type="submit"]:hover{
+    border-color: #2691d9;
+    transition: .5s;
+}
+
+.register_link,
+.login_link {
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+}
+
+.register_link a,
+.login_link a{
+    color: #2691d9;
+    text-decoration: none;
+}
+
+.register_link a:hover,
+.login_link a:hover{
+    text-decoration: underline;
 }

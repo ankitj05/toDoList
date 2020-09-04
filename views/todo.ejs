@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <h1> Hi! <%=name %> </h1>
     <div class="todo-container">
-        <h2>My To-Do List</h2>
+        <h2>Welcome back <%=name %> </h2>
+        <h2>Here is your To-Do List</h2>
         <div class="todo">
-            <form action="/" method="POST" class="todo-header">
+            <form class="todo-header" action="/" method="POST">
                 <input type="text" name="content" />
                 <button type="submit"><span class="fa fa-plus-square"></span></button>
             </form>
@@ -22,7 +22,10 @@
                 <% todoTasks.forEach(details => { %>
                 <% if(details.id === id) { %>
                 <li class="todo-list-item">
-                    <div class="todo-list-item-name"><%= details.content %></div>
+                    <div class="todo-list-item-name">
+                        <input type="checkbox">
+                        <%= details.content %>
+                    </div>
                     <a href="/edit/<%= details._id %>" class="edit">
                         <span class="fas fa-edit"></span>
                     </a>
@@ -34,9 +37,9 @@
                 <% }) %>
             </ul>
         </div>
+        <form action="/logout?_method=DELETE" method="POST">
+            <button class="todo_button" type="submit">Log out</button>
+        </form>
     </div>
 
-    <form action="/logout?_method=DELETE" method="POST">
-        <button type="submit">Log out</button>
-    </form>
 </body>
